@@ -1,3 +1,3 @@
 <?php
-Database::conectar();
+echo Database::conectar();
 echo "conectadoo";
