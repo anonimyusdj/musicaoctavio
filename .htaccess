@@ -1,0 +1,11 @@
+Options All -Indexes
+RewriteEngine On
+ErrorDocument 404 /index.php?c=index&a=error404
+
+RewriteRule ^home/?$ index.php
+RewriteRule ^eventos/?$ index.php?c=index&a=eventos
+RewriteRule ^musica/?$ index.php?c=index&a=musica
+RewriteRule ^patrocinadores/?$ index.php?c=index&a=patrocinadores
+
+RewriteRule ^login/?$ index.php?c=admin&a=login
+RewriteRule ^prueba/?$ index.php?c=admin&a=prueba
