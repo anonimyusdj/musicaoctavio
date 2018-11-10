@@ -25,9 +25,9 @@ require_once "model/encript.php";
       public function editLogin(){
         if($_POST){
           $data=new SiteAdmin();
-          if($_POST['user']!="" && $_POST['pass']!=""){
-            $user=$this->cifrar->cifrador("cifrar",$_POST['user']);
-            $pass=$this->cifrar->cifrador("cifrar",$_POST['pass']);
+          if($_REQUEST['user']!="" && $_REQUEST['pass']!=""){
+            $user=$this->cifrar->cifrador("cifrar",$_REQUEST['user']);
+            $pass=$this->cifrar->cifrador("cifrar",$_REQUEST['pass']);
             $data->user=$user;
             $data->pass=$pass;
 
