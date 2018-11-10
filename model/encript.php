@@ -1,6 +1,7 @@
 <?php
   class Cifrado{
-    public function cifrador($action="cifrar",$texto=false){
+
+    public function cifrador($action,$texto){
       $action=trim($action);
       $salida=false;
 
