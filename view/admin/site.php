@@ -2,7 +2,7 @@
       <div class="col s12 m4">
       </div>
       <div class="col s12 m4 card">
-          <form action="editlogin" method="post">
+          <form action="?c=admin&a=editLogin" method="post">
                 <div class="row">
                    <center> <header>
                        <h4>Cambio de Usuario y Contraseña</h4>
