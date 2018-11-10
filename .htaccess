@@ -9,3 +9,4 @@ RewriteRule ^patrocinadores/?$ index.php?c=index&a=patrocinadores
 
 RewriteRule ^login/?$ index.php?c=admin&a=login
 RewriteRule ^prueba/?$ index.php?c=admin&a=prueba
+RewriteRule ^editlogin/?$ index.php?c=admin&a=editlogin

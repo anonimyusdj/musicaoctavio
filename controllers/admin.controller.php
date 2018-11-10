@@ -1,6 +1,13 @@
 <?php
+require_once "model/site.admin.php";
+require_once "model/encript.php";
     class AdminController{
-
+      private $site;
+      private $cifrar;
+      public function __construct__(){
+        $this->site=new SiteAdmin();
+        $this->cifrar=new Cifrado();
+      }
       public function login(){
           require_once "view/partes/header.php";
           require_once "view/home/menu.php";
@@ -11,8 +18,24 @@
       public function prueba(){
         require_once "view/partes/header.php";
         require_once "view/home/menu.php";
-        require_once "view/admin/prueba.php";
+        require_once "view/admin/site.php";
         require_once "view/partes/footer.php";
       }
+
+      public function editLogin(){
+        if($_POST){
+          $data=new SiteAdmin();
+          if($_POST['user']!="" && $_POST['pass']!=""){
+            $user=$this->cifrar->cifrador("cifrar",$_POST['user']);
+            $pass=$this->cifrar->cifrador("cifrar",$_POST['pass']);
+            $data->user=$user;
+            $data->pass=$pass;
+
+            $this->site->editLogin($data);
+            echo "datos Cambiado con Exito";
+          }
+        }
+      }
+
     }
 ?>
