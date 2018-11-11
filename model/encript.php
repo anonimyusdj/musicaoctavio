@@ -12,7 +12,7 @@
       $secret_key=hash('sha256',$myKey);
       $secret_iv=substr(hash('sha256',$myIV),0,16);
 
-      if ($action && ($action=='cifrar' || $action=='descifrar') && $texto) {
+      if ($action=='cifrar' || $action=='descifrar') {
         $texto=trim(strval($texto));
         switch ($action) {
           case 'cifrar':
