@@ -23,10 +23,8 @@ require_once "model/encript.php";
       }
 
       public function editLogin(){
-        if($_POST){
-          $data=new SiteAdmin();
-          if($_REQUEST['user']!="" && $_REQUEST['pass']!=""){
-            $user=$this->cifrar->cifrador("cifrar",$_REQUEST['user']);
+            //$data=new SiteAdmin();
+            //$user=$this->cifrar->cifrador("cifrar",$_REQUEST['user']);
            /* $pass=$this->cifrar->cifrador("cifrar",$_REQUEST['pass']);
             $data->user=$user;
             $data->pass=$pass;
@@ -35,9 +33,9 @@ require_once "model/encript.php";
             echo "datos Cambiado con Exito";*/
               echo $_REQUEST['user']."<br>";
               echo $_REQUEST['pass']."<br>";
-              echo $user;
-          }
-        }
+            //  echo $user;
+          //}
+        //}
       }
 
     }
