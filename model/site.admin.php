@@ -4,7 +4,7 @@
     public $user;
     public $pass;
 
-    public function __construct__(){
+    public function __construct(){
       try {
 
         $this->pdo=Database::conectar();
@@ -18,7 +18,7 @@
 
     public function editLogin(SiteAdmin $datos){
       try {
-        $sql="UPDATE site SET usuario=?, contrasena=? WHERE id=1";
+        $sql="UPDATE site SET usuario=?, contrasena=? WHERE idsite=1";
         $this->pdo->prepare($sql)->execute(array(
           $datos->user,
           $datos->pass

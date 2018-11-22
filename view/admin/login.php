@@ -2,7 +2,7 @@
     <div class="col s12 m4">
     </div>
     <div class="col s12 m4 card">
-        <form action="editlogin" method="post">
+        <form action="init" method="post">
               <div class="row">
                  <center> <header>
                      <h4>Bienvenido</h4>

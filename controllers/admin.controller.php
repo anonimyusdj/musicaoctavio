@@ -4,7 +4,7 @@ require_once "model/encript.php";
     class AdminController{
       private $site;
       private $cifrar;
-      public function __construct__(){
+      public function __construct(){
         $this->site=new SiteAdmin();
         $this->cifrar=new Cifrado();
       }
@@ -21,21 +21,27 @@ require_once "model/encript.php";
         require_once "view/admin/site.php";
         require_once "view/partes/footer.php";
       }
+      public function home(){
+        require_once "view/partes/header.php";
+        require_once "view/admin/menu.php";
+        require_once "view/admin/home.php";
+        require_once "view/partes/footer2.php";
+      }
+
 
       public function editLogin(){
-            //$data=new SiteAdmin();
-            //$user=$this->cifrar->cifrador("cifrar",$_REQUEST['user']);
-           /* $pass=$this->cifrar->cifrador("cifrar",$_REQUEST['pass']);
+        if($_POST){
+          $data=new SiteAdmin();
+          if($_REQUEST['user']!="" && $_REQUEST['pass']!=""){
+            $user=$this->cifrar->cifrador("cifrar",$_REQUEST['user']);
+            $pass=$this->cifrar->cifrador("cifrar",$_REQUEST['pass']);
             $data->user=$user;
             $data->pass=$pass;
 
             $this->site->editLogin($data);
-            echo "datos Cambiado con Exito";*/
-              echo $_REQUEST['user']."<br>";
-              echo $_REQUEST['pass']."<br>";
-            //  echo $user;
-          //}
-        //}
+            echo "datos Cambiado con Exito";
+          }
+        }
       }
 
     }
