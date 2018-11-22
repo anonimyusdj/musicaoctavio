@@ -21,6 +21,9 @@ require_once "model/encript.php";
           $login->execute(array($user,$pass));
           $rs=$login->fetch(PDO::FETCH_ASSOC);
         if(count($rs)>0 && ($pass==$rs['contrasena'])){
+          session_start();
+          $_SESSION['idSesion']=$rs['idsitio'];
+          $_SESSION['autor']=$rs['autor'];
           echo "<script>alert('Hola Bienvenido ".$rs['autor']."'); location.href = 'admin';</script>'";
         //  header("location: admin");
         }else{

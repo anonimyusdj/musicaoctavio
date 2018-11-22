@@ -2,7 +2,7 @@
     <footer class="page-footer <?php echo $color; ?> darken-2">
       <div class="container">
         <div class="row">
-          <div class="col s12 m3">
+          <div class="col s12 m1">
 
           </div>
           <div class="col s12 m9">
@@ -42,8 +42,8 @@
           </div>
         </div>
       </div>
-      <div class="footer-copyright">
-                <a class="grey-text text-lighten-4 right" href="#!">© 2018 Copyright Octavio Vasquez<a>
+      <div class="footer-copyright center">
+                <a class="grey-text text-lighten-4" href="#!">© 2018 Copyright Octavio Vasquez<a>
       </div>
     </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
