@@ -22,5 +22,5 @@
       <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
     </div></li>
   <li><a href="admin">Home</a></li>
-  <li><a href="#!"><i class="material-icons left">headset</i>Musica</a></li>
+  <li><a href="admMusic"><i class="material-icons left">headset</i>Musica</a></li>
 </ul>
