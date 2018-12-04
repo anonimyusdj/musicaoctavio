@@ -32,12 +32,10 @@
                 <div class="col s12 m1"></div>
                 <div class="col s12 m10 card">
                     <header>
-                        <h4>AGRADECIMIENTOS</h4>
+                        <h4>LEMA</h4>
                     </header>
                     <hr>
-                    <p class="black-text">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estandar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
-                        usa una galería de textos y los mezcla de tal manera que logro hacer un libro de textos especimen. No solo sobrevivio 500 años, sino que tambien ingreso como texto de relleno en documentos electronicos, quedando esencialmente igual al original.
-                        Fue popularizado en los 60s con la creacion de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y mas recientemente con software de autoedicion, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
+                    <p class="black-text"><?php echo $lema;?></p>
                 </div>
                 <div class="col s12 m1"></div>
         </div>
@@ -68,13 +66,13 @@
               <div class="row">
                         <div class="col s12 md12">
                             <center><img style="height: 100px;" class="responsive-img circle" src="<?php echo $imagenes;?>avatar.jpg" alt="">
-                                <h5>Octavio Vazquez</h5>
+                                <h5><?php echo $autor;?></h5>
                             </center>
                             <hr>
                         </div>
 
                         <div class="col s12 m12">
-                            <p>Descripción</p>
+                            <p><?php echo $descripcion;?></p>
                         </div>
                 </div>
             </div>

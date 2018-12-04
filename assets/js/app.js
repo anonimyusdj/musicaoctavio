@@ -27,6 +27,31 @@ app.controller("homeController", function($scope, admin, $http) {
         // console.log($scope.color.background);
     });
 });
+
+app.controller("albumsController", function($scope, $http) {
+    $scope.guardarAlbums = function(nombre, descripcion, foto) {
+        $http.get("saveAlbums", {
+            params: {
+                'nombre': nombre,
+                'descripcion': descripcion,
+                'imagen': foto
+            }
+        }).then(function(response) {
+            $scope.nombreAlbum = null;
+            $scope.inspiracion = null;
+            $scope.foto = null;
+            console.log(response);
+            $scope.getAlbums();
+        });
+    }
+    $scope.getAlbums = function() {
+        $http.get("getAlbums").then(function(response) {
+            $scope.listAlbums = response.data.resultado;
+            // console.data
+        });
+    }
+});
+
 app.controller("musica", function($scope, admin) {
     $scope.titulo = "aqui escucharas musica";
 });

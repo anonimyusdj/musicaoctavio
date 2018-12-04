@@ -13,5 +13,11 @@ RewriteRule ^editlogin/?$ index.php?c=admin&a=editLogin
 RewriteRule ^init/?$ index.php?c=login&a=login
 
 RewriteRule ^admin/?$ index.php?c=admin&a=home
+
 RewriteRule ^admMusic/?$ index.php?c=admin&a=music
 RewriteRule ^subirMusica/?$ index.php?c=admin&a=subirMusica
+
+RewriteRule ^albums/?$ index.php?c=admin&a=albums
+RewriteRule ^saveAlbums?$ index.php?c=admin&a=saveAlbums
+RewriteRule ^getAlbums/?$ index.php?c=admin&a=getAlbums
+RewriteRule ^albumSave/?$ index.php?c=admin&a=albums&r=1

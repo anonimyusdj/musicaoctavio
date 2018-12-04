@@ -1,19 +1,31 @@
 <?php
+require_once "model/db.model.php";
   class SiteAdmin{
-    private $pdo;
+    private $conexion="asas";
     public $user;
     public $pass;
 
     public function __construct(){
       try {
 
-        $this->pdo=Database::conectar();
-
-      } catch (Exception $e) {
-
-        echo $e->getMessage();
+        $this->conexion=Database::conectar();
+       
+      }catch(PDOException $e){
+        print_r($e);
       }
+    }
 
+    public function getInfoSite(){
+      try{
+        //echo $this->conexion;
+        $pdo=Database::conectar();
+        $sql="SELECT * FROM site";
+        $stm=$pdo->prepare("SELECT * FROM site");
+        $stm->execute();
+        return $stm->fetch(PDO::FETCH_ASSOC);
+      }catch(PDOException $e){
+        print_r($e);
+      }
     }
 
     public function editLogin(SiteAdmin $datos){

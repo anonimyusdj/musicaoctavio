@@ -1,12 +1,15 @@
 <?php
 require_once "model/site.admin.php";
 require_once "model/encript.php";
+require_once "model/albums.model.php";
     class AdminController{
       private $site;
       private $cifrar;
+      private $albums;
       public function __construct(){
         $this->site=new SiteAdmin();
         $this->cifrar=new Cifrado();
+        $this->albums=new AlbumsModel();
       }
       public function login(){
           require_once "view/partes/header.php";
@@ -32,6 +35,34 @@ require_once "model/encript.php";
         require_once "view/admin/menu.php";
         require_once "view/admin/musica.php";
         require_once "view/partes/footer2.php";
+      }
+      public function albums(){
+        require_once "view/partes/header.php";
+        require_once "view/admin/menu.php";
+        require_once "view/admin/albums.php";
+        require_once "view/partes/footer2.php";
+      }
+      public function saveAlbums(){
+        try{
+          $datos=new AlbumsModel();
+          $datos->nombre=$_REQUEST['nombreAlbum'];
+          $datos->inspiracion=$_REQUEST['inspiracion'];
+          $datos->foto=$this->albums->subirImage($_REQUEST['nombreAlbum']);
+          //echo "Albums Guardado con Exito";
+          //echo $foto;
+          $this->albums->guardarAlbums($datos);
+          header("location: albumSave");
+        }catch(Exception $e){
+          echo $e->getMessage();
+        }
+      }
+
+      public function getAlbums(){
+        try{
+          $this->albums->getAlbums();
+        }catch(Exception $e){
+          echo($e->getMessage());
+        }
       }
       public function subirMusica(){
         try {
